@@ -2,8 +2,6 @@ package com.store.catalog.services.impl;
 
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import com.store.catalog.parameters.EntityParameter;
 import com.store.catalog.services.EntityService;
 
