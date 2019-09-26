@@ -1,21 +1,18 @@
 package com.store.catalog.models;
 
-import java.util.Set;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
 
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "categories")
-public class Category extends AuditModel {
+public class Review extends AuditModel {
 
     private static final long serialVersionUID = 1L;
 
@@ -28,18 +25,18 @@ public class Category extends AuditModel {
     )
     private Long id;
 
-    @Column(nullable = false, unique = true)
-    private String code;
+    @Column(nullable = false)
+    private String author;
 
-    @Column(nullable = false, unique = true)
-    private String name;
+    @Column(nullable = false)
+    private Product product;
 
-    @Column(nullable = false, unique = true)
-    private String description;
+    @Column(nullable = false)
+    private boolean status;
 
-    @Column
-    private boolean active;
+    @Column(nullable = false)
+    private Date date;
 
-    @ManyToMany(mappedBy = "categories")
-    private Set<Product> products;
+    @Column(nullable = false)
+    private int rating;
 }
