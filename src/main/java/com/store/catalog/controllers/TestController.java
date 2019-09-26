@@ -33,22 +33,22 @@ public class TestController {
 
         // this.create();
 
-        Category category = this.categoryRepository.findOneByCode("123");
-        Iterable<Product> products = this.productRepository.findAll();
+        // Category category = this.categoryRepository.findOneByCode("123");
+        // Iterable<Product> products = this.productRepository.findAll();
 
-        Set<Category> categories = new HashSet<>();
-        categories.add(category);
+        // Set<Category> categories = new HashSet<>();
+        // categories.add(category);
         // products.add(product);
 
         // category.setProducts(toSet(products));
 
-        Product product = products.iterator().next();
-        product.setCategories(categories);
+        // Product product = products.iterator().next();
+        // product.setCategories(categories);
         
-        this.productRepository.save(product);
+        // this.productRepository.save(product);
 
         // this.categoryRepository.save(category);
-// 
+ 
         return "it´s okay";
     } 
 
