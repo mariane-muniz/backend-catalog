@@ -1,13 +1,13 @@
 package com.store.catalog.models;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 
 import lombok.Data;
 
-// Extender de produtos
-
 @Data
-public class PhysicalProduct extends AuditModel {
+@Entity
+public class PhysicalProduct extends AbstractProduct {
 
     private static final long serialVersionUID = 1L;
 

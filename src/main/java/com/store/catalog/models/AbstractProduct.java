@@ -11,15 +11,16 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import lombok.Data;
 
 @Data
-@Entity
+@MappedSuperclass
 @Table(name = "products")
-public class Product extends AuditModel {
+public abstract class AbstractProduct extends AuditModel {
 
     private static final long serialVersionUID = 1L;
 

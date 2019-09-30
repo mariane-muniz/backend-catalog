@@ -7,7 +7,6 @@ import java.util.Set;
 import javax.annotation.Resource;
 
 import com.store.catalog.models.Category;
-import com.store.catalog.models.Product;
 import com.store.catalog.repositories.CategoryRepository;
 import com.store.catalog.repositories.ProductRepository;
 
@@ -59,23 +58,23 @@ public class TestController {
         return set;
     }
 
-    private void create() {
+    // private void create() {
 
-        Category c = new Category();
-        c.setActive(true);
-        c.setCode("123");
-        c.setName("Toys");
-        c.setDescription("Description of category toys.");
+    //     Category c = new Category();
+    //     c.setActive(true);
+    //     c.setCode("123");
+    //     c.setName("Toys");
+    //     c.setDescription("Description of category toys.");
 
 
-        Product p = new Product();
-        p.setActive(true);
-        p.setCode("456");
-        p.setDateAvailable(new Date());
-        p.setDescription("Product description");
-        p.setName("Product name");
+    //     Product p = new Product();
+    //     p.setActive(true);
+    //     p.setCode("456");
+    //     p.setDateAvailable(new Date());
+    //     p.setDescription("Product description");
+    //     p.setName("Product name");
 
-        this.categoryRepository.save(c);
-        this.productRepository.save(p);
-    }
+    //     this.categoryRepository.save(c);
+    //     this.productRepository.save(p);
+    // }
 }

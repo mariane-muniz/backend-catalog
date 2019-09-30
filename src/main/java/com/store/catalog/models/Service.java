@@ -9,7 +9,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Service extends Product {
+public class Service extends AbstractProduct {
 
     private static final long serialVersionUID = 1L;
 

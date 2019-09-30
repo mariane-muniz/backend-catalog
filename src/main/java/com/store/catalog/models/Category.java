@@ -41,5 +41,5 @@ public class Category extends AuditModel {
     private boolean active;
 
     @ManyToMany(mappedBy = "categories")
-    private Set<Product> products;
+    private Set<AbstractProduct> products;
 }

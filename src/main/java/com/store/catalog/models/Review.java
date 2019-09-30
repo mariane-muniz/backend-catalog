@@ -29,7 +29,7 @@ public class Review extends AuditModel {
     private String author;
 
     @Column(nullable = false)
-    private Product product;
+    private AbstractProduct product;
 
     @Column(nullable = false)
     private boolean status;

@@ -1,0 +1,21 @@
+POST http://192.168.0.6:8080/products HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Product name 2",
+    "description": "Product description 2",
+    "code": "1234",
+    "active": "true"
+}
+
+###
+
+GET http://192.168.0.6:8080/products HTTP/1.1
+
+###
+
+GET http://192.168.0.6:8080/products/search/findOneByCode HTTP/1.1
+
+{
+    "code": 123
+}

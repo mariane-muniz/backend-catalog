@@ -1,0 +1,25 @@
+POST http://192.168.0.6:8080/categories HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Category name 2",
+    "description": "Category description 2",
+    "code": "789",
+    "active": "true"
+}
+
+###
+
+GET http://192.168.0.6:8080/categories HTTP/1.1
+
+###
+
+PUT http://192.168.0.6:8080/categories/789 HTTP/1.1
+content-type: application/json
+
+{
+    "code": "789",
+    "name": "Category name",
+}
+
+###
