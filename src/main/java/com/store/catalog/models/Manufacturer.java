@@ -5,12 +5,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 import lombok.Data;
 
 @Data
 @Entity
-public class Manufacturer extends AuditModel {
+@Table( name = "manufacturers" )
+public class Manufacturer extends AbstractAudit {
 
     private static final long serialVersionUID = 1L;
 

@@ -7,12 +7,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 import lombok.Data;
 
 @Data
 @Entity
-public class Review extends AuditModel {
+@Table ( name = "reviews" )
+public class Review extends AbstractAudit {
 
     private static final long serialVersionUID = 1L;
 
@@ -29,7 +31,7 @@ public class Review extends AuditModel {
     private String author;
 
     @Column(nullable = false)
-    private AbstractProduct product;
+    private Product product;
 
     @Column(nullable = false)
     private boolean status;

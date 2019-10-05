@@ -7,20 +7,22 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
-import javax.persistence.MappedSuperclass;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import lombok.Data;
 
 @Data
-@MappedSuperclass
+@Entity
+@Inheritance( strategy = InheritanceType.JOINED )
 @Table(name = "products")
-public abstract class AbstractProduct extends AuditModel {
+public class Product extends AbstractAudit {
 
     private static final long serialVersionUID = 1L;
 

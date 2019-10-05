@@ -1,4 +1,14 @@
-POST http://192.168.0.6:8080/products HTTP/1.1
+@local = localhost:8080
+@remote = 192.168.0.6:8080
+@enviroment = {{remote}}
+
+###
+
+GET http://{{enviroment}}/digital_products HTTP/1.1
+
+###
+
+POST http://{{enviroment}}/digital_products HTTP/1.1
 content-type: application/json
 
 {
@@ -10,12 +20,8 @@ content-type: application/json
 
 ###
 
-GET http://192.168.0.6:8080/products HTTP/1.1
-
-###
-
-GET http://192.168.0.6:8080/products/search/findOneByCode HTTP/1.1
+POST http://{{enviroment}}/products/search/findOneByCode HTTP/1.1
 
 {
-    "code": 123
+    "code": 1234
 }

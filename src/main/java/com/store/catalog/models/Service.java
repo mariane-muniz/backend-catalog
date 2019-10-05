@@ -4,12 +4,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 import lombok.Data;
 
 @Data
 @Entity
-public class Service extends AbstractProduct {
+@Table( name = "services" )
+public class Service extends Product {
 
     private static final long serialVersionUID = 1L;
 

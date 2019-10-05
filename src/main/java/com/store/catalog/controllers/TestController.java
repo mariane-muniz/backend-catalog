@@ -1,12 +1,10 @@
 package com.store.catalog.controllers;
 
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
 import javax.annotation.Resource;
 
-import com.store.catalog.models.Category;
 import com.store.catalog.repositories.CategoryRepository;
 import com.store.catalog.repositories.ProductRepository;
 

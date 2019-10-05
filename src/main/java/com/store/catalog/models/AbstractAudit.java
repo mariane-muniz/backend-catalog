@@ -18,7 +18,7 @@ import java.util.Date;
         value = {"createdAt", "updatedAt"},
         allowGetters = true
 )
-public abstract class AuditModel implements Serializable {
+public abstract class AbstractAudit implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

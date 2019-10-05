@@ -1,12 +1,13 @@
 package com.store.catalog.repositories;
 
-import com.store.catalog.models.AbstractProduct;
+
+import com.store.catalog.models.Product;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource(collectionResourceRel = "product", path = "products")
-public interface ProductRepository  extends CrudRepository<AbstractProduct, Long> {
+public interface ProductRepository  extends CrudRepository<Product, Long> {
 
-    AbstractProduct findOneByCode(final String code);
+    Product findOneByCode(final String code);
 }

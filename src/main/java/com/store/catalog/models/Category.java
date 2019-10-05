@@ -15,7 +15,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "categories")
-public class Category extends AuditModel {
+public class Category extends AbstractAudit {
 
     private static final long serialVersionUID = 1L;
 
@@ -41,5 +41,5 @@ public class Category extends AuditModel {
     private boolean active;
 
     @ManyToMany(mappedBy = "categories")
-    private Set<AbstractProduct> products;
+    private Set<Product> products;
 }
