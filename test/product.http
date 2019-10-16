@@ -1,6 +1,6 @@
 @local = localhost:8080
 @remote = 192.168.0.6:8080
-@enviroment = {{remote}}
+@enviroment = {{local}}
 
 ###
 
@@ -12,9 +12,9 @@ POST http://{{enviroment}}/digital_products HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Product name 2",
-    "description": "Product description 2",
-    "code": "1234",
+    "name": "Product name3 ",
+    "description": "Product description 3",
+    "code": "7895",
     "active": "true"
 }
 
