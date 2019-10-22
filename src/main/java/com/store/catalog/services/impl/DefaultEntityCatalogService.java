@@ -3,7 +3,6 @@ package com.store.catalog.services.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.store.catalog.services.AbstractService;
 import com.store.catalog.services.EntityCatalogService;
 import com.store.catalog.services.EntityRepositoryIndex;
 
@@ -25,7 +24,8 @@ public class DefaultEntityCatalogService implements EntityCatalogService {
     @Override
     public List<Object> getEntityRepository(final String entityName) {
 
-        final CrudRepository repository = (CrudRepository) this.context.getBean(EntityRepositoryIndex.product);
+        final CrudRepository repository = 
+            (CrudRepository) this.context.getBean(EntityRepositoryIndex.product);
 
         LOG.info(repository.toString());
         LOG.info(EntityRepositoryIndex.product);
@@ -39,5 +39,13 @@ public class DefaultEntityCatalogService implements EntityCatalogService {
         }
 
         return null;
+    }
+
+    @Override
+    public long countEntityRepository(final String entityName) {
+
+        final CrudRepository repository = 
+            (CrudRepository) this.context.getBean(EntityRepositoryIndex.product);
+        return repository.count();
     }
 }

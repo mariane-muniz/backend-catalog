@@ -21,4 +21,10 @@ public class DefaultEntityFacade<T> implements EntityFacade {
         return this.entityCatalogService.getEntityRepository(entityName);
     }
 
+    @Override
+    public Long countEntities(final String entityName, final String attributes) {
+
+        Assert.notNull(entityName, "entityName");
+        return this.entityCatalogService.countEntityRepository(entityName);
+    }
 }

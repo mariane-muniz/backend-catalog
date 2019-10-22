@@ -32,8 +32,8 @@ public class EntityController {
         @PathVariable("entityName") final String entityName,
         @RequestParam("attributes") final String attributes) {
 
-        LOG.warn("entityName: " + entityName);
-        LOG.warn("attributes: " + attributes);
+        LOG.debug("entityName: " + entityName);
+        LOG.debug("attributes: " + attributes);
 
         if (StringUtils.isNotEmpty(entityName)) {
             final Object entities = this.entityFacade.getEntities(entityName, attributes);
@@ -42,6 +42,21 @@ public class EntityController {
             }
             return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         }
-        return ResponseEntity.ok("that´s okay!");
+        return ResponseEntity.badRequest().body("Server error");
+    }
+
+    @GetMapping("/count/{entityName}")
+    public ResponseEntity count(
+        @PathVariable("entityName") final String entityName,
+        @RequestParam("attributes") final String attributes) {
+
+        LOG.debug("entityName: " + entityName);
+        LOG.debug("attributes: " + attributes);
+
+        if (StringUtils.isNotEmpty(entityName)) {
+            final long count = this.entityFacade.countEntities(entityName, attributes);
+                return ResponseEntity.ok(count);
+        }
+        return ResponseEntity.badRequest().body("Server error");
     }
 }
