@@ -58,7 +58,7 @@ public class Product extends AbstractAudit {
 
     private Date dateAvailable;
 
-    private boolean active;
+    private boolean status;
 
     @ManyToMany
     @JoinTable(
