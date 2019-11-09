@@ -5,7 +5,7 @@ import com.store.catalog.models.DigitalProduct;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@RepositoryRestResource(collectionResourceRel = "digital_product", path = "digital_products")
+@RepositoryRestResource(collectionResourceRel = "digital_products", path = "digital_product")
 public interface DigitalProductRepository extends CrudRepository<DigitalProduct, Long> {
     
 }
