@@ -25,3 +25,7 @@ POST http://{{enviroment}}/products/search/findOneByCode HTTP/1.1
 {
     "code": 1234
 }
+
+###
+
+GET http://{{enviroment}}/
