@@ -12,9 +12,9 @@ POST http://{{enviroment}}/digital_products HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Product name3 ",
-    "description": "Product description 3",
-    "code": "7895",
+    "name": "Product name ",
+    "description": "Product description",
+    "code": "123",
     "active": "true"
 }
 
@@ -28,4 +28,5 @@ POST http://{{enviroment}}/products/search/findOneByCode HTTP/1.1
 
 ###
 
-GET http://{{enviroment}}/
+GET http://{{enviroment}}/product?size=2&page=0&sort=asc
+# GET http://{{enviroment}}/product?page=0&size=2&sort=asc
