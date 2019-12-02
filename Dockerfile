@@ -1,4 +1,5 @@
 FROM openjdk:8-jdk
-ADD target/catalog.war catalog.war
-EXPOSE 8081
-ENTRYPOINT [ "java", "-jar", "catalog.war" ]
+VOLUME [ "/tmp" ]
+COPY target/catalog.war /usr/local/tomcat/webapp/catalog.war
+RUN sh -c "touch /usr/local/tomcat/webapp/catalog.war"
+ENTRYPOINT [ "sh", "-c", "java -Djava.security.egd=file:/dev/./urandom -jar /usr/local/tomcat/webapp/catalog.war" ]
