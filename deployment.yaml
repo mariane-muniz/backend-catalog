@@ -35,3 +35,13 @@ spec:
       targetPort: 8080
       nodePort: 31000
     type: NodePort
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: postgree-catalog
+spec:
+  type: ExternalName
+  externalName: ec2-174-129-43-40.compute-1.amazonaws.com
