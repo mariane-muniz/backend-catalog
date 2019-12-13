@@ -41,7 +41,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: mongo
+  name: external-catalog-sql
 spec: 
   type: ExternalName 
   externalName: ec2-174-129-43-40.compute-1.amazonaws.com
