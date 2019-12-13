@@ -20,15 +20,15 @@ spec:
       - name: content
         image: marianemuniz/content:v1
         ports:
-        - containerPort: 8080
+        - containerPort: 8081
       - name: pricing
         image: marianemuniz/pricing:v1
         ports:
-        - containerPort: 8080
+        - containerPort: 8082
       - name: stock
         image: marianemuniz/stock:v1
         ports:
-        - containerPort: 8080
+        - containerPort: 8083
       hostNetwork: true
       dnsPolicy: Default
 
@@ -57,3 +57,33 @@ metadata:
 spec: 
   type: ExternalName 
   externalName: ec2-174-129-43-40.compute-1.amazonaws.com
+
+---
+
+kind: Service
+  apiVersion: v1
+  metadata:
+    name: external-pricing-sql
+  spec: 
+    type: ExternalName 
+    externalName: ec2-107-20-243-220.compute-1.amazonaws.com
+
+---
+
+kind: Service
+  apiVersion: v1
+  metadata:
+    name: external-stock-sql
+  spec: 
+    type: ExternalName 
+    externalName: ec2-174-129-43-40.compute-1.amazonaws.com
+
+---
+
+kind: Service
+  apiVersion: v1
+  metadata:
+    name: external-content-sql
+  spec: 
+    type: ExternalName 
+    externalName: ec2-184-73-232-93.compute-1.amazonaws.com
