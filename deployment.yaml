@@ -17,6 +17,8 @@ spec:
         image: marianemuniz/catalog:v2
         ports:
         - containerPort: 8080
+      hostNetwork: true
+      dnsPolicy: Default
 
 ---
 
