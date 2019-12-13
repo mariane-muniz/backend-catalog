@@ -17,6 +17,9 @@ spec:
         image: marianemuniz/catalog:v2
         ports:
         - containerPort: 8080
+        env:
+        - name: POSTGREE_PORT
+          value: "5432"
       hostNetwork: true
       dnsPolicy: Default
 
@@ -35,24 +38,3 @@ spec:
       targetPort: 8080
       nodePort: 31000
     type: NodePort
-
----
-
-kind: Service
-apiVersion: v1
-metadata:
-  name: sql-catalog
-spec:
-  ports:
-  - port: 27017
-    targetPort: 49763
----
-kind: Endpoints
-apiVersion: v1
-metadata:
-  name: sql-catalog
-subsets:
-  - addresses:
-      - ip: 174.129.43.40
-    ports:
-      - port: 49763
