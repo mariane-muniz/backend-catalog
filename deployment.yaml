@@ -41,7 +41,18 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: postgree-catalog
+  name: sql-catalog
 spec:
-  type: ExternalName
-  externalName: ec2-174-129-43-40.compute-1.amazonaws.com
+  ports:
+  - port: 27017
+    targetPort: 49763
+---
+kind: Endpoints
+apiVersion: v1
+metadata:
+  name: sql-catalog
+subsets:
+  - addresses:
+      - ip: 174.129.43.40
+    ports:
+      - port: 49763
