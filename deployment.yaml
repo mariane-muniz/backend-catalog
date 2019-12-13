@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: catalog
-        image: marianemuniz/catalog:v1
+        image: marianemuniz/catalog:v3
         ports:
         - containerPort: 8080
       - name: content
