@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: content
+      app: commerce
   replicas: 1 # tells deployment to run 2 pods matching the template
   template:
     metadata:
