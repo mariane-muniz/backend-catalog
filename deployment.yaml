@@ -18,15 +18,15 @@ spec:
         ports:
         - containerPort: 8080
       - name: content
-        image: marianemuniz/content:v1
+        image: marianemuniz/content:v2
         ports:
         - containerPort: 8081
       - name: pricing
-        image: marianemuniz/pricing:v1
+        image: marianemuniz/pricing:v1 # rever
         ports:
         - containerPort: 8082
       - name: stock
-        image: marianemuniz/stock:v1
+        image: marianemuniz/stock:v2
         ports:
         - containerPort: 8083
       hostNetwork: true
