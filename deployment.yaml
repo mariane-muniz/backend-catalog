@@ -22,7 +22,7 @@ spec:
         ports:
         - containerPort: 8081
       - name: pricing
-        image: marianemuniz/pricing:v1 # rever
+        image: marianemuniz/pricing:v2
         ports:
         - containerPort: 8082
       - name: stock
