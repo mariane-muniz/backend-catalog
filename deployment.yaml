@@ -6,15 +6,27 @@ spec:
   selector:
     matchLabels:
       app: content
-  replicas: 2 # tells deployment to run 2 pods matching the template
+  replicas: 1 # tells deployment to run 2 pods matching the template
   template:
     metadata:
       labels:
-        app: content
+        app: commerce
     spec:
       containers:
       - name: catalog
-        image: marianemuniz/catalog:v3
+        image: marianemuniz/catalog:v1
+        ports:
+        - containerPort: 8080
+      - name: content
+        image: marianemuniz/content:v1
+        ports:
+        - containerPort: 8080
+      - name: pricing
+        image: marianemuniz/pricing:v1
+        ports:
+        - containerPort: 8080
+      - name: stock
+        image: marianemuniz/stock:v1
         ports:
         - containerPort: 8080
       hostNetwork: true
