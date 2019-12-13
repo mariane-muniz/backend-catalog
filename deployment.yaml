@@ -17,3 +17,19 @@ spec:
         image: marianemuniz/catalog:latest
         ports:
         - containerPort: 8080
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+    name: content-service
+spec: 
+    selector: 
+        app: catalog
+    ports: 
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+      nodePort: 31000
+    type: NodePort
