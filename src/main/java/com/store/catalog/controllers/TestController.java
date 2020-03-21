@@ -29,6 +29,12 @@ public class TestController {
     private CategoryRepository categoryRepository;
 
     @ResponseBody
+    @GetMapping("/test1")
+    public String test1() {
+        return "ok";
+    }
+
+    @ResponseBody
     @GetMapping("/test")
     public String test() {
 

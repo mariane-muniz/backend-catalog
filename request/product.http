@@ -1,0 +1,86 @@
+@local = localhost:8080
+@remote = 192.168.0.6:8080
+@enviroment = {{local}}
+
+### PROFILE
+
+GET http://localhost:8080/api/farm-catalog/profile/service HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+### GET RESULTS
+
+GET http://localhost:8080/api/farm-catalog/product HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+### GET SINGLE RESULT
+
+GET http://localhost:8080/api/farm-catalog/product/6 HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+### PUT REGISTER
+
+POST http://localhost:8080/api/farm-catalog/product HTTP/1.1
+content-type: application/json
+Authorization: {{token}}
+
+{
+    "name": "Product name ",
+    "description": "Product description",
+    "code": "123",
+    "active": "true"
+}
+
+###
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GET http://localhost:8080/api/farm-catalog/elements/test1 HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+###
+
+POST http://{{enviroment}}/digital_products HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Product name ",
+    "description": "Product description",
+    "code": "123",
+    "active": "true"
+}
+
+###
+
+#POST http://localhost:8080/api/farm-catalog/products/search/findOneByCode HTTP/1.1
+GET http://localhost:8080/api/farm-catalog/product HTTP/1.1
+Content-Type: application/json
+Authorization: {{token}}
+
+//{
+//    "code": 1234
+//}
+
+###
+
+GET http://{{enviroment}}/product?size=2&page=0&sort=asc
+
+###
+# GET http://{{enviroment}}/product?page=0&size=2&sort=asc

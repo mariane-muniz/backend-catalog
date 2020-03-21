@@ -3,22 +3,14 @@ package com.store.catalog.models;
 import java.util.Date;
 import java.util.Set;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.Lob;
-import javax.persistence.ManyToMany;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-import lombok.Data;
+import com.omni.aurora.core.model.AbstractAudit;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Inheritance( strategy = InheritanceType.JOINED )
 @Table(name = "products")
@@ -27,12 +19,7 @@ public class Product extends AbstractAudit {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(generator = "question_generator")
-    @SequenceGenerator(
-            name = "question_generator",
-            sequenceName = "question_sequence",
-            initialValue = 1000
-    )
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Lob

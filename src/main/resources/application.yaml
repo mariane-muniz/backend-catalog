@@ -1,0 +1,32 @@
+server:
+  port: 10001
+spring:
+  application:
+    name: farm-catalog
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  jmx:
+    enabled: false
+  datasource:
+    url: jdbc:mysql://192.168.0.50:3306/aurora?allowPublicKeyRetrieval=true&sslMode=DISABLED
+    username: root
+    password: password
+    initialization-mode: never
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka
+    register-with-eureka: true
+
+logging:
+  pattern:
+    level: DEBUG
+app:
+  protocol: "http://"

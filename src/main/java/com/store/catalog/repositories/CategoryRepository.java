@@ -7,6 +7,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource(collectionResourceRel = "categories", path = "category")
 public interface CategoryRepository extends PagingAndSortingRepository<Category, Long> {
-
     public Category findOneByCode(final String code);
 }
