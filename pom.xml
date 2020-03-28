@@ -53,7 +53,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>backend</finalName>
+		<finalName>catalog</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.sonarsource.scanner.maven</groupId>
