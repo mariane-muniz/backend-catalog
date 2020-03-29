@@ -1,5 +1,3 @@
 package com.store.catalog.services;
 
-public interface AbstractService {
-
-}
+public interface AbstractService { }

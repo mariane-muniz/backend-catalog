@@ -30,11 +30,11 @@ public class DefaultEntityCatalogService implements EntityCatalogService {
         LOG.info(repository.toString());
         LOG.info(EntityRepositoryIndex.product);
 
-        final Iterable itens = repository.findAll();
+        final Iterable items = repository.findAll();
 
-        if (itens.iterator().hasNext()) {
+        if (items.iterator().hasNext()) {
             final List<Object> target = new ArrayList<>();
-            itens.iterator().forEachRemaining(target::add);
+            items.iterator().forEachRemaining(target::add);
             return target;
         }
 

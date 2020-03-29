@@ -10,8 +10,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.jms.annotation.EnableJms;
 import org.springframework.web.client.RestTemplate;
 
+@EnableJms
 @EnableDiscoveryClient
 @SpringBootApplication
 @EnableJpaAuditing
