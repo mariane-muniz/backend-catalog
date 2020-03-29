@@ -1,9 +1,9 @@
 package com.store.catalog.config;
 
-import com.omni.aurora.core.property.JWTConfiguration;
 import com.omni.aurora.token.config.SecurityTokenConfig;
 import com.omni.aurora.token.converter.TokenConverter;
 import com.omni.aurora.token.filter.JwtTokenAuthorizationFilter;
+import com.omni.aurora.token.property.JWTConfiguration;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
