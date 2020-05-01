@@ -16,24 +16,16 @@ import lombok.Setter;
 @Table(name = "products")
 public class Product extends AbstractAudit {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 3L;
 
     @Lob
     private String description;
 
-    @Column(length = 255, nullable = false, unique = true)
+    @Column(nullable = false, unique = true)
     private String name;
-
-    @Column(length = 255, nullable = true, unique = false)
     private String model;
-
-    @Column(length = 255, nullable = true, unique = false)
     private String sku;
-
-    @Column(length = 255, nullable = true, unique = false)
     private String upc;
-
-    @Column(length = 255, nullable = true, unique = false)
     private String ean;
 
     private Date dateAvailable;
