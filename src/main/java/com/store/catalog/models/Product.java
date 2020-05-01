@@ -18,18 +18,11 @@ public class Product extends AbstractAudit {
 
     private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
     @Lob
     private String description;
 
     @Column(length = 255, nullable = false, unique = true)
     private String name;
-
-    @Column(length = 255, nullable = false, unique = true)
-    private String code;
 
     @Column(length = 255, nullable = true, unique = false)
     private String model;
