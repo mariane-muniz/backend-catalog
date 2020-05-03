@@ -39,4 +39,11 @@ public class Product extends AbstractAudit {
         inverseJoinColumns = @JoinColumn(name = "category_id")
     )
     private Set<Category> categories;
+
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY,
+            mappedBy = "product"
+    )
+    private Set<Review> reviews;
 }

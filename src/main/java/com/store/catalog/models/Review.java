@@ -1,7 +1,5 @@
 package com.store.catalog.models;
 
-import java.util.Date;
-
 import javax.persistence.*;
 
 import com.omni.aurora.core.model.AbstractAudit;
@@ -11,26 +9,20 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table ( name = "reviews" )
+@Table(name = "reviews")
 public class Review extends AbstractAudit {
 
-    private static final long serialVersionUID = 1L;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private static final long serialVersionUID = 2L;
 
     @Column(nullable = false)
     private String author;
 
-    @Column(nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "product_id", nullable = true)
     private Product product;
 
     @Column(nullable = false)
     private boolean status;
-
-    @Column(nullable = false)
-    private Date date;
 
     @Column(nullable = false)
     private int rating;
