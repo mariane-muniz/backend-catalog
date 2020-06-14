@@ -5,5 +5,5 @@ WORKDIR /tmp/
 RUN mvn package
 
 FROM openjdk:8-jdk
-EXPOSE 8080
-ENTRYPOINT [ "java", "-jar", "catalog.jar" ]
+EXPOSE 10001
+ENTRYPOINT [ "java", "-jar", "-Xmx64m", "-Xss256k", "catalog.jar" ]
